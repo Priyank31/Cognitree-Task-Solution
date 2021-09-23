@@ -10,18 +10,38 @@ public class Solution {
     //Map to store the origin and corresponding Pair of total horsepower and total no. of cars
     Map<String, Pair<Float, Integer> > tree_map = new TreeMap<String, Pair<Float, Integer> >();
 
+    int No_of_data;
+
+    //using constructor to count no. of data in the input file
+    Solution() throws FileNotFoundException{
+        int cnt=0;
+
+        //creating a file object
+        File file = new File("car_input");
+        
+        //passing the file object in Scanner to read data
+        Scanner sc = new Scanner(file);
+
+        while(sc.hasNextLine()){
+            sc.nextLine();
+            cnt++;
+        }
+        
+        this.No_of_data = cnt;
+
+    }
 
     //getData() function to get the Data from the input file
     public void getData()throws FileNotFoundException{
 
         //creating a file object
-        File file = new File("/home/priyank/Cognitree Submission/car_input");
+        File file = new File("car_input");
         
         //passing the file object in Scanner to read data
         Scanner sc = new Scanner(file);
 
         //Creating array of Car object
-        Car[] Cars = new Car[406];
+        Car[] Cars = new Car[No_of_data - 1];
 
         //temporary variables
         String temp_str;
