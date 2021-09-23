@@ -10,7 +10,9 @@ public class Solution {
     //Map to store the origin and corresponding Pair of total horsepower and total no. of cars
     Map<String, Pair<Float, Integer> > tree_map = new TreeMap<String, Pair<Float, Integer> >();
 
+    //To store no. of data in the input file
     int No_of_data;
+
 
     //using constructor to count no. of data in the input file
     Solution() throws FileNotFoundException{
@@ -29,6 +31,8 @@ public class Solution {
         
         this.No_of_data = cnt;
 
+        //Calling getData() function
+        this.getData();
     }
 
     //getData() function to get the Data from the input file
@@ -165,6 +169,8 @@ public class Solution {
             }
 
             int cnt = 1;
+
+            System.out.println("The average horsepower of Cars in origin "+ input_origin + " is "+ avg);
             //Print the output from the ArrayList
             for (int i = index; i < (index + input_No_of_cars); i++){
 
@@ -205,13 +211,13 @@ public class Solution {
 
         Solution sol = new Solution();
         
-        //Calling getData() function
-        sol.getData();
-
         Scanner sc = new Scanner(System.in);
 
         //taking input
+        System.out.print("Enter the Origin: ");
         String input_origin = sc.next();
+
+        System.out.print("Enter No. of Cars: ");
         int No_of_cars = sc.nextInt();
 
 
